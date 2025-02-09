@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
     handle.data = qrt;
     if (uv_timer_init(&qrt->loop, &handle) != 0) {
         printf("uv_timer_init failed\n");
-    } else if (uv_timer_start(&handle, timer_cb, 30, 30) != 0) {
+    } else if (uv_timer_start(&handle, timer_cb, 0, 1) != 0) {
         printf("uv_timer_start failed\n");
     }
 

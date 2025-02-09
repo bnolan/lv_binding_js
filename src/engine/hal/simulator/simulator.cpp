@@ -60,8 +60,8 @@ void hal_init(void) {
     lv_indev_set_group(enc_indev, g);
 
     /*Set a cursor for the mouse*/
-    LV_IMG_DECLARE(mouse_cursor_icon); /*Declare the image file.*/
-    lv_obj_t * cursor_obj = lv_img_create(lv_scr_act()); /*Create an image object for the cursor */
-    lv_img_set_src(cursor_obj, &mouse_cursor_icon);           /*Set the image source*/
-    lv_indev_set_cursor(mouse_indev, cursor_obj);             /*Connect the image  object to the driver*/
+    // LV_IMG_DECLARE(mouse_cursor_icon); /*Declare the image file.*/
+    // lv_obj_t * cursor_obj = lv_img_create(lv_scr_act()); /*Create an image object for the cursor */
+    // lv_img_set_src(cursor_obj, &mouse_cursor_icon);           /*Set the image source*/
+    // lv_indev_set_cursor(mouse_indev, cursor_obj);             /*Connect the image  object to the driver*/
 }

@@ -1,6 +1,6 @@
 #include "./device.hpp"
 
-#define DISP_BUF_SIZE (1024 * 600)
+#define DISP_BUF_SIZE (320 * 240)
 
 void hal_init () {
     /*LittlevGL init*/
@@ -21,8 +21,8 @@ void hal_init () {
     lv_disp_drv_init(&disp_drv);
     disp_drv.draw_buf   = &disp_buf;
     disp_drv.flush_cb   = fbdev_flush;
-    disp_drv.hor_res    = 1024;
-    disp_drv.ver_res    = 600;
+    disp_drv.hor_res    = 320;
+    disp_drv.ver_res    = 240;
     lv_disp_drv_register(&disp_drv);
 
 	/* Linux input device init */
