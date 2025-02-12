@@ -4,8 +4,8 @@ import React from "react";
 function App() {
   return (
     <View style={{ "background-color": "blue" }}>
-      <Button style={{ "background-color": "red" }}>
-        <Text>Hello</Text>
+      <Button style={{ "background-color": "black" }}>
+        <Text style={{ "text-color": "white" }}>Hello?!</Text>
       </Button>
     </View>
   );
