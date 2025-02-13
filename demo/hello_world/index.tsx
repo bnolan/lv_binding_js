@@ -1,5 +1,5 @@
 import { Button, Line, Render, Text, View } from "lvgljs-ui";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const URL = "https://mastodon.social/api/v1/timelines/public";
 
@@ -9,12 +9,14 @@ const light = "#f3f3f3";
 function App() {
   const [data, setData] = useState([]);
 
-  fetch(URL)
-    .then((response) => response.json())
-    .then((data) =>
-      setData(data.map((post) => post.content.replace(/<[^>]*>?/gm, ""))),
-    )
-    .catch((error) => console.error("Error:", error));
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) =>
+        setData(data.map((post) => post.content.replace(/<[^>]*>?/gm, ""))),
+      )
+      .catch((error) => console.error("Error:", error));
+  }, []);
 
   return (
     <View
@@ -26,6 +28,9 @@ function App() {
         "flex-direction": "column",
       }}
     >
+      <Text style={{ "font-size": 24, "text-color": dark }}>
+        {data.length} posts
+      </Text>
       {data.map((post) => (
         <>
           <Text style={{ "text-color": dark }}>{post.slice(0, 32)}...</Text>
